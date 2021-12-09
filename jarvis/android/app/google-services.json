@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "97340019167",
+    "firebase_url": "https://jarvis-7a8a2-default-rtdb.firebaseio.com",
+    "project_id": "jarvis-7a8a2",
+    "storage_bucket": "jarvis-7a8a2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:97340019167:android:ac335c14d2dd85bef3f46a",
+        "android_client_info": {
+          "package_name": "com.example.jarvisadmin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "97340019167-p3j8f1fsn2lagau3rscttod4rrr04d34.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuwf0-NhYbll_asq6IkTMY6pj1E1JLUbE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "97340019167-p3j8f1fsn2lagau3rscttod4rrr04d34.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
