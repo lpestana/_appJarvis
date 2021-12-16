@@ -1,10 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:jarvis_core/widgets/mp_empty.dart';
+import 'package:jarvis_core/widgets/mp_list_view.dart';
+import 'package:jarvis_core/widgets/mp_loading.dart';
 import 'package:jarvisadmin/pages/pedidos_finalizados/pedidos_finalizados_controller.dart';
-import 'package:jarvisadmin/widgets/mp_empty.dart';
-import 'package:jarvisadmin/widgets/mp_list_view.dart';
-import 'package:jarvisadmin/widgets/mp_loading.dart';
 import 'package:jarvis_core/core/model/produto_model.dart';
 import 'package:jarvis_core/widgets/mp_app_bar.dart';
 

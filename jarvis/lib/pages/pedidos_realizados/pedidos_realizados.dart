@@ -2,11 +2,13 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart';
+import 'package:jarvis_core/widgets/mp_button_icon.dart';
 import 'package:jarvis_core/widgets/mp_empty.dart';
 import 'package:jarvis_core/widgets/mp_list_view.dart';
 import 'package:jarvis_core/core/model/produto_model.dart';
 import 'package:jarvis_core/widgets/mp_app_bar.dart';
 import 'package:jarvis_core/widgets/mp_loading.dart';
+import 'package:jarvisadmin/pages/pedidos_finalizados/pedidos_finalizados.dart';
 
 import 'pedidos_realizados_controller.dart';
 
@@ -18,7 +20,7 @@ class PedidosRealizadosPage extends StatefulWidget {
 }
 
 class _PedidosRealizadosPageState extends State<PedidosRealizadosPage> {
-    final _controller = PedidosRealizadosController();
+  final _controller = PedidosRealizadosController();
 
   @override
   void initState() {
@@ -38,6 +40,25 @@ class _PedidosRealizadosPageState extends State<PedidosRealizadosPage> {
             color: Colors.black,
           ),
         ),
+        withLeading: true,
+        actions: [
+          MPButtonIcon(
+            iconData: Icons.flag,
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (_) => PedidosFinalizadosPage()),
+              );
+            },
+          ),
+          /*MPButtonIcon(
+            iconData: Icons.pending,
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (_) => PedidosPendentesPage()),
+              );
+            },
+          )*/
+        ],
       ),
       body: StreamBuilder<QuerySnapshot>(
           stream: _controller.pedidosPendentesStream,

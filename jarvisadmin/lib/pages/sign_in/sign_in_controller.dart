@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 import 'package:jarvis_core/core/exceptions/admin_invalido_exception.dart';
 import 'package:jarvis_core/core/exceptions/email_invalido_exception.dart';
 import 'package:jarvis_core/core/exceptions/senha_errada_exception.dart';
@@ -13,8 +12,8 @@ class SignInController {
   bool _isLoading = false;
 
   final _firebaseAuth = FirebaseAuth.instance;
-  final FirebaseAuth _auth = FirebaseAuth.instance;
-  final GoogleSignIn _googleSignIn = GoogleSignIn();
+  //final FirebaseAuth _auth = FirebaseAuth.instance;
+  //final GoogleSignIn _googleSignIn = GoogleSignIn();
   final _usuariosRef = FirebaseFirestore.instance.collection('usuarios');
 
   void setEmail(String email) => _email = email;
@@ -52,7 +51,7 @@ class SignInController {
     return null;
   }
 
-  /*Configuração Login com conta Google */
+  /*Configuração Login com conta Google 
 
   Future getGooleLogin() async {
     final GoogleSignInAccount googleUser = await _googleSignIn.signIn();
@@ -67,6 +66,8 @@ class SignInController {
     final FirebaseUser user =
         (await _auth.signInWithCredential(credential)).user;
     print("signed in " + user.displayName);
-    return user;
+    return user; 
   }
+ */
+  
 }

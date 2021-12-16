@@ -70,7 +70,6 @@ class HomePage extends StatelessWidget {
   }
 }
 
-
 class _Button extends StatelessWidget {
   _Button({
     this.page,
@@ -109,10 +108,14 @@ class _Button extends StatelessWidget {
               ),
               SizedBox(height: 8),
               Expanded(
-                child: Text(
-                  text,
-                  style: TextStyle(
-                    fontSize: 20,
+                child: Align(
+                  alignment: Alignment.center,
+                  child: Text(
+                    text,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 20,
+                    ),
                   ),
                 ),
               ),

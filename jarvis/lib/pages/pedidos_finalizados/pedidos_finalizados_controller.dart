@@ -3,7 +3,11 @@ import 'package:jarvis_core/core/model/pedido_model.dart';
 
 class PedidosFinalizadosControler {
   final Stream<QuerySnapshot> _pedidosFinalizadosStream =
-      FirebaseFirestore.instance.collection('pedidos_finalizados').snapshots();
+      FirebaseFirestore.instance
+          .collection('pedidos_finalizados')
+          .where('usuarioId', isEqualTo: '1wS0cli7iNhffe2OdIXPeoZTyMt1')
+          .orderBy('dataPedido') //ordena pedido por data
+          .snapshots();
 
   Stream<QuerySnapshot> get pedidosFinalizadosStream =>
       _pedidosFinalizadosStream;

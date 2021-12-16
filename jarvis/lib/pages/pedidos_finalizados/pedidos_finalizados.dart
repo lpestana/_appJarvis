@@ -1,10 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart';
+import 'package:jarvis_core/widgets/mp_empty.dart';
+import 'package:jarvis_core/widgets/mp_list_view.dart';
+import 'package:jarvis_core/widgets/mp_loading.dart';
 import 'package:jarvisadmin/pages/pedidos_finalizados/pedidos_finalizados_controller.dart';
-import 'package:jarvisadmin/widgets/mp_empty.dart';
-import 'package:jarvisadmin/widgets/mp_list_view.dart';
-import 'package:jarvisadmin/widgets/mp_loading.dart';
 import 'package:jarvis_core/core/model/produto_model.dart';
 import 'package:jarvis_core/widgets/mp_app_bar.dart';
 
@@ -19,10 +20,42 @@ class _PedidosPendentesPageState extends State<PedidosFinalizadosPage> {
   final _controller = PedidosFinalizadosControler();
 
   @override
+  void initState() {
+    super.initState();
+    initializeDateFormatting();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: MPAppBar(
-        title: Text('Pedidos Finalizados'),
+        title: Text(
+          'Pedidos Concluidos',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 18,
+            color: Colors.black,
+          ),
+        ),
+                withLeading: true,
+        actions: [/*
+          MPButtonIcon(
+            iconData: Icons.pending,
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (_) => PedidosRealizadosPage()),
+              );
+            },
+          ),
+          MPButtonIcon(
+            iconData: Icons.pending,
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (_) => PedidosPendentesPage()),
+              );
+            },
+          )*/
+        ],
       ),
       body: StreamBuilder<QuerySnapshot>(
           stream: _controller.pedidosFinalizadosStream,
@@ -44,7 +77,7 @@ class _PedidosPendentesPageState extends State<PedidosFinalizadosPage> {
                     ),
                   ),
                   subtitle: Text(
-                    pedidos[i].nomeUsuario,
+                    'Cliente: ${pedidos[i].nomeUsuario} / Mesa: ${pedidos[i].mesa}',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 18,
